@@ -18,7 +18,7 @@ This repository provides an example of using OpenCV in Python to detect whether 
 - A blank canvas (light gray) is created each frame to represent a simplified map view of the room or table.
 - Each seat’s status is shown as a colored box (green for “Not Occupied,” red for “Occupied”) around the table, giving a quick schematic overview.
   
-- **3. Live Video Preview**:
+### **3. Live Video Preview**:
 - The code also displays the original video feed (or webcam) with bounding boxes drawn around each seat, along with text indicating occupancy status.
 
 ---
