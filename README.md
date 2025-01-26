@@ -11,8 +11,8 @@ This repository provides an example of using OpenCV in Python to detect whether 
 
 ## **Methodology**
 ### **1. Region of Interest (ROI):**
-Each seat is defined by a Region of Interest (ROI) in the frame, which is compared to a reference “empty seat” background.
-Changes in pixel values indicate whether a seat is likely occupied or not.
+- Each seat is defined by a Region of Interest (ROI) in the frame, which is compared to a reference “empty seat” background.
+- Changes in pixel values indicate whether a seat is likely occupied or not.
 
 ### **2. Object Detection:**
 - The pre-trained YOLOv8n model (`best.pt`), obtained from [J3lly-Been/YOLOv8-HumanDetection](https://github.com/J3lly-Been/YOLOv8-HumanDetection), is used to detect objects and humans within the ROIs corresponding to each chair in a processed frame.
