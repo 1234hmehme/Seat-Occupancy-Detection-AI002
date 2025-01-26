@@ -14,25 +14,14 @@ This repository provides an example of using OpenCV in Python to detect whether 
 - Each seat is defined by a Region of Interest (ROI) in the frame, which is compared to a reference “empty seat” background.
 - Changes in pixel values indicate whether a seat is likely occupied or not.
 
-### **2. Object Detection:**
-- The pre-trained YOLOv8n model (`best.pt`), obtained from [J3lly-Been/YOLOv8-HumanDetection](https://github.com/J3lly-Been/YOLOv8-HumanDetection), is used to detect objects and humans within the ROIs corresponding to each chair in a processed frame.
+### **2. Dynamic Simulation Map:**
+- A blank canvas (light gray) is created each frame to represent a simplified map view of the room or table.
+- Each seat’s status is shown as a colored box (green for “Not Occupied,” red for “Occupied”) around the table, giving a quick schematic overview.
   
-- **Chair Status Determination**:
-  - If nothing is detected then check on smaller ROIs.
-  -  If the detection results include the value `0`, the corresponding chair is marked as "**occupied**".
-  -  If `0` is not detected but other values are present:
-        - Determine whether these values are unimportant. If they are, the chair is marked as "**empty**".
-        - Otherwise, the chair is marked as "**occupied**".
-- **Dataframe Output**:
-  - Results are saved as a `.csv` file containing the following columns:
-    - `Frame Number`
-    - `Chair Number`
-    - `Status` (`1` for **occupied**, `0` for **empty**)
+- **3. Live Video Preview**:
+- The code also displays the original video feed (or webcam) with bounding boxes drawn around each seat, along with text indicating occupancy status.
 
 ---
 
-This methodology was **significantly influenced** by the approach in [TheBlackCat22/Seat-Occupancy-Detection](https://github.com/TheBlackCat22/Seat-Occupancy-Detection) and builds upon it with some adjustments and optimizations.
-
----
 
 
