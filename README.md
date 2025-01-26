@@ -4,17 +4,15 @@
 - Python 3.11  
   [![Build Status](https://img.shields.io/badge/Python-3.11-blue)](https://www.python.org/downloads/release/python-3110/)
 
-## **References**
-- [J3lly-Been/YOLOv8-HumanDetection](https://github.com/J3lly-Been/YOLOv8-HumanDetection)  
-- [TheBlackCat22/Seat-Occupancy-Detection](https://github.com/TheBlackCat22/Seat-Occupancy-Detection)  
 
----
+This repository provides an example of using OpenCV in Python to detect whether seats are occupied or not in a video, and simultaneously render a “seat map” (a simple schematic) that displays seat statuses (occupied vs. not occupied) around a table.
 
-This repository implements a lightweight seat occupancy detection system using a pre-trained YOLOv8 model on processed frames.
+
 
 ## **Methodology**
 ### **1. Region of Interest (ROI):**
-- Input images are resized and manually cropped to focus on regions of interest (ROIs), including smaller, detailed sub-ROIs.
+Each seat is defined by a Region of Interest (ROI) in the frame, which is compared to a reference “empty seat” background.
+Changes in pixel values indicate whether a seat is likely occupied or not.
 
 ### **2. Object Detection:**
 - The pre-trained YOLOv8n model (`best.pt`), obtained from [J3lly-Been/YOLOv8-HumanDetection](https://github.com/J3lly-Been/YOLOv8-HumanDetection), is used to detect objects and humans within the ROIs corresponding to each chair in a processed frame.
@@ -37,9 +35,4 @@ This methodology was **significantly influenced** by the approach in [TheBlackCa
 
 ---
 
-## **Results**
-Below are three sample processed frames from a handmade test dataset of a dining room:
 
-![Processed Frame 1](results/1.png)  
-![Processed Frame 2](results/2.png)  
-![Processed Frame 3](results/3.png)
