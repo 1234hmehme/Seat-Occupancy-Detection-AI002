@@ -1,4 +1,4 @@
-# Seat-Occupancy-Detection-YOLOv8
+# Seat-Occupancy-Detection-OpenCV 
 
 ## **Built With**
 - Python 3.11  
